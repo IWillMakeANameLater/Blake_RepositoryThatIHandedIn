@@ -1,0 +1,19 @@
+November 16th 2021:
+	List VS Array
+
+	(List is an extension of array, which is a base data structure based on index concept). 
+	
+	List is better for frequent insertion and deletion. 
+	It's not predefined in length and has methods that allow adding or removing elements.
+	However, it's slower to access an element from a List (this is based on the position of the element). 
+	It's also not index based in the memory, the elements are not necccesarily next to eachother. 
+	
+	Arrays are fixed in length and do not support methods for insertion or deletion from the current Array.
+	The consequence is that they're much smaller and faster than lists.
+	The data is stored contiguously (next or toghether in a sequence),
+	first element is lowest in index of array and last element is highest. 
+	However, resizing an Array is very expensive. 
+	
+	Where Lists are better at frequent insertion and deletion,
+	Arrays are much faster for frequent access or lookup of data inside.
+
