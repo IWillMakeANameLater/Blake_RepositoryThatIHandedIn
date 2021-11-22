@@ -18,11 +18,9 @@ public class Main {
         // Problem 2
         System.out.println("------------Problem 2------------");
         int[] randArray2 = new int[10];
-        for (int i = 0; i < randArray2.length; i++){
-            randArray2[i] = (int)(Math.random()*100);
-        }
         float arrayAverage = 0f;
         for (int i = 0; i < randArray2.length; i++){
+            randArray2[i] = (int)(Math.random()*100);
             arrayAverage += randArray2[i];
         }
         arrayAverage = arrayAverage/randArray2.length;
