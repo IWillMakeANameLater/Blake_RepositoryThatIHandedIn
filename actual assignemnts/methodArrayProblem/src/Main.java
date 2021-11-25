@@ -25,6 +25,9 @@ public class Main {
         return newArray;
     }
 
+    // Insert a variable in to a specified position
+    // Technically it copies up to the specified position and then appends that value
+    // Then appends in a for loop the remaining part of the original array
     static int[] arrayInsert(int[] inputArray, int insertVar, int insertPos){
         int[] newArray = arrayCopy(inputArray, new int[insertPos]);
         newArray = arrayAppend(newArray, insertVar);
