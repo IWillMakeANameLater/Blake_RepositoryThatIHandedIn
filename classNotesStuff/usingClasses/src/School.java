@@ -28,7 +28,8 @@ public class School {
 
     // In case the person doesn't want to specify the students and teachers already in the school
     // Either because those teachers and students have not been hired or enrolled yet
-    // Or someone is being lazy
+    // Or someone is being lazy,
+    // Here would be a shorter way to make a school
     public School(String name, String ownerName, String mascot){
         this.teachers = new ArrayList<Teacher>();
         this.students = new ArrayList<Student>();
