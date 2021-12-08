@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScopeStuff.iml" filepath="$PROJECT_DIR$/ScopeStuff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timeClass.iml" filepath="$PROJECT_DIR$/timeClass.iml" />
     </modules>
   </component>
 </project>
