@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -12,70 +11,99 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <HBox prefHeight="26.0" prefWidth="217.0">
+      <children>
+         <Label fx:id="errorDisplay" alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="236.0" textFill="RED">
+            <font>
+               <Font size="11.0" />
+            </font>
+         </Label>
+      </children>
+   </HBox>
    <HBox layoutX="30.0" layoutY="149.0" prefHeight="27.0" prefWidth="172.0">
       <children>
-         <Label fx:id="display" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="43.0" prefWidth="144.0" text="0">
+         <Label fx:id="display" alignment="CENTER" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="226.0">
             <font>
                <Font size="18.0" />
             </font>
          </Label>
-         <Button fx:id="buttonCLEAR" mnemonicParsing="false" onAction="#onCLEAR" prefHeight="27.0" prefWidth="71.0" text="CLEAR">
+      </children>
+   </HBox>
+   <HBox layoutX="30.0" layoutY="77.0" prefHeight="26.0" prefWidth="217.0">
+      <children>
+         <Button fx:id="buttonCLEAR" mnemonicParsing="false" onAction="#onCLEAR" prefHeight="27.0" prefWidth="115.0" text="CLEAR">
             <padding>
                <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
             </padding>
             <HBox.margin>
-               <Insets left="5.0" />
+               <Insets />
             </HBox.margin>
+         </Button>
+         <Button fx:id="buttonDEL" layoutX="15.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDEL" prefHeight="27.0" prefWidth="121.0" text="DEL">
+            <padding>
+               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+            </padding>
+         </Button>
+         <Button fx:id="buttonSOLVE" layoutX="122.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSOLVE" prefHeight="27.0" prefWidth="121.0" text="SOLVE">
+            <padding>
+               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+            </padding>
          </Button>
       </children>
    </HBox>
    <HBox prefHeight="26.0" prefWidth="217.0">
       <children>
-         <TextField fx:id="textField_Add" />
-         <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#onAdd" prefHeight="27.0" prefWidth="71.0" text="+">
-            <padding>
-               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
-            </padding>
-         </Button>
-      </children>
-   </HBox>
-   <HBox layoutX="30.0" layoutY="77.0" prefHeight="26.0" prefWidth="217.0">
-      <children>
-         <TextField fx:id="textField_Subtract" />
          <Button fx:id="buttonSubtract" mnemonicParsing="false" onAction="#onSubtract" prefHeight="27.0" prefWidth="71.0" text="-">
             <padding>
                <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
             </padding>
          </Button>
-      </children>
-   </HBox>
-   <HBox layoutX="30.0" layoutY="124.0" prefHeight="26.0" prefWidth="217.0">
-      <children>
-         <TextField fx:id="textField_Multiply" />
+         <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#onAdd" prefHeight="27.0" prefWidth="71.0" text="+">
+            <padding>
+               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+            </padding>
+         </Button>
          <Button fx:id="buttonMultiply" mnemonicParsing="false" onAction="#onMultiply" prefHeight="27.0" prefWidth="71.0" text="*">
             <padding>
                <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
             </padding>
          </Button>
-      </children>
-   </HBox>
-   <HBox layoutX="30.0" layoutY="171.0" prefHeight="26.0" prefWidth="217.0">
-      <children>
-         <TextField fx:id="textField_Divide" />
          <Button fx:id="buttonDivide" mnemonicParsing="false" onAction="#onDivide" prefHeight="27.0" prefWidth="71.0" text="/">
+            <padding>
+               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+            </padding>
+         </Button>
+         <Button fx:id="buttonDecimal" layoutX="182.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDecimal" prefHeight="27.0" prefWidth="71.0" text=".">
             <padding>
                <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
             </padding>
          </Button>
       </children>
    </HBox>
-   <HBox layoutX="30.0" layoutY="218.0" prefHeight="26.0" prefWidth="217.0">
+   <HBox layoutX="30.0" layoutY="171.0" prefHeight="49.0" prefWidth="217.0">
       <children>
-         <Label fx:id="errorDisplay" alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="226.0" textFill="RED">
-            <font>
-               <Font size="11.0" />
-            </font>
-         </Label>
+         <Button fx:id="button07" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on7" prefHeight="60.0" prefWidth="74.0" text="7" />
+         <Button fx:id="button08" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on8" prefHeight="74.0" prefWidth="70.0" text="8" />
+         <Button fx:id="button09" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on9" prefHeight="57.0" prefWidth="75.0" text="9" />
+      </children>
+   </HBox>
+   <HBox layoutX="30.0" layoutY="171.0" prefHeight="41.0" prefWidth="217.0">
+      <children>
+         <Button fx:id="button041" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on4" prefHeight="68.0" prefWidth="66.0" text="4" />
+         <Button fx:id="button051" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on5" prefHeight="54.0" prefWidth="77.0" text="5" />
+         <Button fx:id="button061" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on6" prefHeight="63.0" prefWidth="75.0" text="6" />
+      </children>
+   </HBox>
+   <HBox layoutX="30.0" layoutY="263.0" prefHeight="44.0" prefWidth="217.0">
+      <children>
+         <Button fx:id="button0111" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on1" prefHeight="76.0" prefWidth="72.0" text="1" />
+         <Button fx:id="button0211" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on2" prefHeight="70.0" prefWidth="80.0" text="2" />
+         <Button fx:id="button0311" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#on3" prefHeight="52.0" prefWidth="76.0" text="3" />
+      </children>
+   </HBox>
+   <HBox layoutX="30.0" layoutY="309.0" prefHeight="26.0" prefWidth="217.0">
+      <children>
+         <Button fx:id="button00111" mnemonicParsing="false" onAction="#on0" prefHeight="25.0" prefWidth="237.0" text="0" />
       </children>
    </HBox>
 </VBox>
