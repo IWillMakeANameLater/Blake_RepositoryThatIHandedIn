@@ -6,15 +6,13 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="356.0" prefWidth="530.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.friendbookassignment.friendsBookController">
+<VBox alignment="CENTER" prefHeight="356.0" prefWidth="722.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.friendbookassignment.friendsBookController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -43,18 +41,13 @@
                               </ListView>
                               <VBox prefHeight="263.0" prefWidth="321.0">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="24.0" prefWidth="309.0" text="INFO">
+                                    <Label alignment="CENTER" prefHeight="24.0" prefWidth="309.0" text="Information List">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TableView fx:id="friendInfoTable" prefHeight="188.0" prefWidth="314.0">
-                                      <columns>
-                                        <TableColumn fx:id="friendInfoCol" prefWidth="75.0" text="information" />
-                                        <TableColumn fx:id="friendInfoCol2" prefWidth="220.0" text="Value" />
-                                      </columns>
-                                    </TableView>
-                                    <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDelete" prefHeight="28.0" prefWidth="87.0" text="Delete Friend">
+                                    <ListView fx:id="displayInfoArea" onMouseClicked="#onMouseClickInfo" prefHeight="200.0" prefWidth="200.0" />
+                                    <Button fx:id="deleteFriendButton" disable="true" mnemonicParsing="false" onAction="#onDeleteFriend" prefHeight="28.0" prefWidth="87.0" text="Delete Friend">
                                        <VBox.margin>
                                           <Insets left="110.0" top="3.0" />
                                        </VBox.margin>
@@ -63,6 +56,34 @@
                               </VBox>
                            </children>
                         </HBox>
+                        <VBox layoutX="496.0" layoutY="13.0" prefHeight="269.0" prefWidth="179.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="179.0">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Information Name" />
+                              <TextArea fx:id="infoName" disable="true" prefHeight="11.0" prefWidth="179.0" />
+                              <Label layoutX="10.0" layoutY="53.0" text="Value" />
+                              <TextArea fx:id="infoValue" disable="true" layoutX="10.0" layoutY="70.0" prefHeight="11.0" prefWidth="179.0" />
+                              <Button fx:id="changeInfoButton" disable="true" mnemonicParsing="false" onAction="#onChangeInfo" text="Save Changes">
+                                 <VBox.margin>
+                                    <Insets left="45.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="deleteInfoButton" disable="true" layoutX="55.0" layoutY="168.0" mnemonicParsing="false" onAction="#onDeleteInfo" text="Delete Info">
+                                 <VBox.margin>
+                                    <Insets left="52.5" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="addInfoButton" disable="true" layoutX="63.0" layoutY="198.0" mnemonicParsing="false" onAction="#onAddNew" text="Add New">
+                                 <VBox.margin>
+                                    <Insets left="57.4" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -110,7 +131,7 @@
                               <TextArea fx:id="nicknameField" prefHeight="37.0" prefWidth="366.0" />
                            </children>
                         </HBox>
-                        <Button fx:id="submitField" layoutX="216.0" layoutY="263.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="23.0" prefWidth="58.0" text="SUBMIT" />
+                        <Button layoutX="216.0" layoutY="263.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="23.0" prefWidth="58.0" text="Submit" />
                      </children>
                   </AnchorPane>
             </content>

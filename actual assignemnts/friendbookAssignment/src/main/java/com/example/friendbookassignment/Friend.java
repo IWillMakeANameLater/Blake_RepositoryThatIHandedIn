@@ -1,67 +1,63 @@
 package com.example.friendbookassignment;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class Friend {
     //Fields
 
-    private String phoneNumber;
-    private String email;
-    private String name;
-    private String lastName;
-    private String nickName;
+    private ArrayList<FriendInformation> friendInfo;
 
-    //Constructor
-    public Friend(String phoneNumber, String email, String name, String lastName, String nickName){
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.name = name;
-        this.lastName = lastName;
-        this.nickName = nickName;
+    //Constructor - Default
+    public Friend(){
+        this.friendInfo = new ArrayList<>();
     }
 
-    //Getters
-
-    public String getPhoneNumber() {
-        return phoneNumber;
+    //Search for first instance with infoType
+    public FriendInformation infoLookUp(String infoType){
+        for(int i = 0; i<friendInfo.size(); i++){
+            FriendInformation currentInfo = friendInfo.get(i);
+            if(Objects.equals(infoType, currentInfo.getInformation())){
+                return currentInfo;
+            }
+        }
+        return null;
     }
 
-    public String getEmail() {
-        return email;
+    public ArrayList getAllFriendInformation(){
+        return (ArrayList)this.friendInfo.clone();
     }
 
-    public String getName() {
-        return name;
+    // Add a new friend info
+    public void addFriendInfo(FriendInformation addedInfo){
+        this.friendInfo.add(addedInfo);
     }
 
-    public String getLastName() {
-        return lastName;
+    //Attempt to remove a select friend info
+    public boolean removeFriendInfo(FriendInformation requestedRemoval){
+        try{
+            this.friendInfo.remove(requestedRemoval);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
+    // To String
     @Override
     public String toString(){
-        return this.nickName;
+        String friendNickName = infoLookUp(FriendInformation.INFO_TYPE_NICKNAME).getValue();
+        String friendName = infoLookUp(FriendInformation.INFO_TYPE_NAME).getValue();
+        String friendLastName = infoLookUp(FriendInformation.INFO_TYPE_LASTNAME).getValue();
+        if (friendNickName != null && friendNickName != ""){
+            return friendNickName;
+        } else if (friendName != null && friendName != "") {
+            return friendName;
+        }  else if (friendLastName != null && friendLastName != ""){
+            return friendLastName;
+        }
+        else {
+            return "Unnamed Friend";
+        }
     }
 }
