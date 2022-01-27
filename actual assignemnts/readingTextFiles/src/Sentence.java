@@ -29,6 +29,8 @@ public class Sentence {
         updateSentenceWords();
     }
 
+    // No direct setter for words because words is based on the sentence itself
+
     public ArrayList<Integer> searchForWord(String lookFor){
         ArrayList<Integer> incidencePositions = new ArrayList<>();
         for(int i = 0; i < words.length; i++){

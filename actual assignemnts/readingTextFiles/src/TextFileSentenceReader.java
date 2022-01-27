@@ -32,16 +32,7 @@ public class TextFileSentenceReader {
         findSentencesInFile();
     }
 
-    public HashMap<Sentence, Integer> searchForWord(String word){
-        HashMap<Sentence, Integer> wordFoundLocations = new HashMap<>();
-        for(Sentence sentence : this.sentences){
-            ArrayList<Integer> incidencePositions = sentence.searchForWord(word);
-            for(Integer incidencePos : incidencePositions){
-                wordFoundLocations.put(sentence, incidencePos);
-            }
-        }
-        return wordFoundLocations;
-    }
+    // No direct setter for sentences because the sentences are based on the file itself
 
     private void findSentencesInFile () throws IOException {
         this.sentences.clear();
@@ -76,5 +67,17 @@ public class TextFileSentenceReader {
                 currentString += currentChar;
             }
         }
+    }
+
+    //Returns the sentence object instead of just a position in case the caller wants to do something with the sentence itself
+    public HashMap<Sentence, Integer> searchForWord(String word){
+        HashMap<Sentence, Integer> wordFoundLocations = new HashMap<>();
+        for(Sentence sentence : this.sentences){
+            ArrayList<Integer> incidencePositions = sentence.searchForWord(word);
+            for(Integer incidencePos : incidencePositions){
+                wordFoundLocations.put(sentence, incidencePos);
+            }
+        }
+        return wordFoundLocations;
     }
 }
